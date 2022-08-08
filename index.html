@@ -19,15 +19,16 @@
     <title>Portfolio Javier López</title>
   </head>
   <body>
+    <div class="overflow-hidden w-full"> 
     <div
       class="bg-gray-500 bg-cover h-screen flex flex-col justify-between items-center"
-      style="background-image: url('images/fondo2.jpg')"
+      style="background-image: url('images/fondo6.jpg')"
     >
       <div
-        class="bg-white h-8 fixed top-2 marco-superior right-0 left-0 ml-6 mr-6"
+        class="hidden lg:block bg-white h-8 fixed top-2 marco-superior right-0 left-0 ml-6 mr-6"
       ></div>
       <ul
-        class="marco-izquierdo z-20 h-auto top-0 bottom-0 mt-6 mb-6 space-y-8 bg-white fixed left-0 transform translate-x-6 transition duration-500 text-black w-8 flex flex-col items-center justify-center"
+        class="marco-izquierdo z-20 h-auto top-0 bottom-0 mt-6 mb-6 space-y-8 bg-white hidden lg:flex fixed left-0 transform translate-x-6 transition duration-500 text-black w-8 flex flex-col items-center justify-center"
       >
         <li>
           <a href=""><img src="images/instagram.png" alt="" class="h-4" /></a>
@@ -40,14 +41,14 @@
         </li>
       </ul>
       <div
-        class="marco-inferior z-20 bottom-0 transform -translate-y-6 transition duration-500 left-0 right-0 ml-6 mr-6 space-x-8 bg-white h-8 fixed text-black flex items-center justify-center"
+        class="hidden lg:flex marco-inferior z-20 bottom-0 transform -translate-y-6 transition duration-500 left-0 right-0 ml-6 mr-6 space-x-8 bg-white h-8 fixed text-black flex items-center justify-center"
       >
         <button id="mostrar" class="uppercase font-bold">
           - Mostrar <span class="text-red-400"> Contenido</span> -
         </button>
       </div>
       <div
-        class="bg-white z-20 fixed w-8 marco-derecho right-0 transform -translate-x-6 transition duration-300 top-0 bottom-0 mt-6 mb-6"
+        class="hidden lg:block bg-white z-20 fixed w-8 marco-derecho right-0 transform -translate-x-6 transition duration-300 top-0 bottom-0 mt-6 mb-6"
       ></div>
       <div class="h-1 w-full bg-transparent"></div>
       <nav
@@ -55,25 +56,11 @@
         class="w-full transform translate-y-20 text-blue-900 fixed transition duration-300 z-20"
       >
         <div
-          class="h-16 flex flex-wrap justify-between items-center px-20 lg:px-0 md:container mx-auto"
+          class="h-16 flex flex-wrap justify-between items-center lg:px-0 lg:container mx-auto"
         >
           <!-- 
 -->
-          <p class="text-3xl font-bold">Portfolio de Javier</p>
-          <ul id=="nav-responsive" class="hidden lg:flex items-center space-x-10 uppercase text-md font-bold">
-            <li>
-              <a class="hover:text-blue-600" href="#">Inicio</a>
-            </li>
-            <li>
-              <a class="hover:text-blue-600" href="#sobreMi">Sobre mí</a>
-            </li>
-            <li>
-              <a class="hover:text-blue-600" href="#">Portfolio</a>
-            </li>
-            <li>
-              <a class="hover:text-blue-600" href="#">Contacto</a>
-            </li>
-          </ul>
+          <p class="text-3xl font-bold ml-2">Portfolio de Javier</p>
           <div class="mr-2 flex items-center lg:hidden">
             <!-- Mobile menu a -->
             <button type="button" id="toggle-menu" class="abierto inline-block inline-flex items-center justify-center p-2 rounded-md text-blue-100  focus:outline-none  transition duration-150 ease-in-out" aria-label="Main menu" aria-expanded="false">
@@ -89,45 +76,57 @@
               </svg>
             </a>
           </div>
+          <ul id="nav-responsive" class="hidden w-full lg:w-auto lg:flex-row lg:bg-transparent  lg:flex lg:items-center  lg:space-x-10 uppercase text-md font-bold">
+            <li class=" hover:bg-blue-200 lg:hover:bg-transparent px-10 lg:px-0 py-2 lg:py-0">
+              <a class="hover:text-blue-600" href="#">Inicio</a>
+            </li>
+            <li class=" hover:bg-blue-200 lg:hover:bg-transparent px-10 lg:px-0 py-2 lg:py-0">
+              <a class="hover:text-blue-600" href="#conocimientos">Conocimientos</a>
+            </li>
+            <li class=" hover:bg-blue-200 lg:hover:bg-transparent px-10 lg:px-0 py-2 lg:py-0">
+              <a class="hover:text-blue-600" href="#sobreMi">Sobre mí</a>
+            </li>
+            <li class=" hover:bg-blue-200 lg:hover:bg-transparent px-10 lg:px-0 py-2 lg:py-0">
+              <a class="hover:text-blue-600" href="#">Portfolio</a>
+            </li>
+            <li class=" hover:bg-blue-200 lg:hover:bg-transparent px-10 lg:px-0 py-2 lg:py-0">
+              <a class="hover:text-blue-600" href="#">Contacto</a>
+            </li>
+          </ul>
+          
         </div>
       </nav>
 
-      <div class="space-y-8">
-        <div class="relative">
-          <h1 class="text-2xl sm:text-4xl lg:text-6xl font-bold relative text-blue-900 uppercase text-center">
+      <div class="space-y-8 slider-div">
+        <div class=" post">
+          <h1 class="post-title text-2xl sm:text-4xl lg:text-6xl font-bold relative text-blue-900 uppercase text-center">
             Javier López
           </h1>
-          <div
-            class="h-full w-2 bg-blue-900 absolute top-0 overflow-hidden slider-right"
-          ></div>
-          <div
-            class="h-full w-2 bg-blue-900 absolute top-0 overflow-hidden slider-left"
-          ></div>
         </div>
         <div class="relative">
           <h2
-            class="text-3xl uppercase text-center font-bold overflow-hidden text-blue-900"
+            class="text-xl sm:text-2xl lg:text-3xl uppercase text-center font-bold overflow-hidden text-blue-900"
           >
             - Web Developer -
           </h2>
         </div>
       </div>
-      <div class="flex space-x-12 items-center justify-center mb-24">
+      <div class="flex flex-col lg:flex-row space-y-6 lg:space-y-0 lg:space-x-12 space-x-0 items-center justify-center mb-24">
         <button
-          class="uppercase text-md font-extrabold flex justify-center items-center py-2 w-40 rounded-xl border-blue-900 transparent border-4 text-blue-900 hover:bg-blue-900 hover:text-blue-200 pointer transition duration-500 ease-in-out"
+          class="uppercase  font-extrabold flex justify-center items-center py-2 w-40 rounded-xl border-blue-900 transparent border-4 text-blue-900 hover:bg-blue-900 hover:text-blue-200 pointer transition duration-500 ease-in-out"
         >
           Sobre mí
         </button>
         <button
-          class="uppercase text-md font-extrabold flex justify-center items-center py-2 w-40 rounded-xl border-blue-900 transparent border-4 text-blue-900 hover:bg-blue-900 hover:text-blue-200 pointer transition duration-500 ease-in-out"
+          class="uppercase text-sm lg:text-md font-extrabold flex justify-center items-center py-2 w-40 rounded-xl border-blue-900 transparent border-4 text-blue-900 hover:bg-blue-900 hover:text-blue-200 pointer transition duration-500 ease-in-out"
         >
           Portfolio
         </button>
       </div>
     </div>
-    <section class="bg-gray-300 px-10 py-32">
-      <div class="container mx-auto flex w-full justify-around">
-        <div class="flex space-x-4 text-blue-900">
+    <section id="conocimientos" class="bg-gray-300 px-10 py-32">
+      <div class="container mx-auto flex w-full flex flex-col space-y-10 lg:flex-row lg:space-y-0 justify-around items-center">
+        <div class=" space-x-4 text-blue-900">
           <div
             class="uppercase text-center w-64 h-72 border-2 border-blue-900 rounded-xl overflow-hidden"
           >
@@ -180,16 +179,10 @@
       <div
         class="container mx-auto py-32 flex flex-col space-y-10 justify-center items-center"
       >
-        <div class="relative text-center">
-          <h3 class="text-6xl font-extrabold relative text-blue-900 uppercase">
+        <div class="relative text-center slider-div">
+          <h3 class="text-2xl sm:text-4xl lg:text-6xl font-extrabold relative text-blue-900 uppercase">
             Sobre mí
           </h3>
-          <div
-            class="h-full w-2 bg-blue-200 absolute top-0 overflow-hidden slider-right"
-          ></div>
-          <div
-            class="h-full w-2 bg-blue-200 absolute top-0 overflow-hidden slider-left"
-          ></div>
         </div>
         <p class="text-lg tracking-wide text-center">
           Joven Grancanario, en concreto del municipio de Arucas. Mi historia es
@@ -227,28 +220,16 @@
         >
       </div>
     </section>
-    <section id="portfolio" class="py-32 relative">
+    <section id="portfolio" class="py-32 relative justify-center">
       <div
-        class="absolute top-0 bottom-0 z-10 h-full w-full"
+        class="absolute top-0 bottom-0 z-0 h-full w-full"
         style="background-image: url('/images/fondo3.jpg')"
       ></div>
-      <div class="text-center">
-        <h3
-          class="text-6xl font-extrabold relative text-blue-900 uppercase z-20"
-        >
+      <div class="relative text-center slider-div mx-auto">
+        <h3 class="text-2xl sm:text-4xl lg:text-6xl font-extrabold relative text-blue-900 uppercase">
           Mi Portfolio
         </h3>
-        <h4 class="text-2xl font-extrabold relative text-blue-900 uppercase">
-          Algunos de mis proyectos web
-        </h4>
-        <div
-          class="w-2 bg-blue-200 absolute top-0 overflow-hidden slider-right"
-        ></div>
-        <div
-          class="w-2 bg-blue-200 absolute top-0 overflow-hidden slider-left"
-        ></div>
-      </div>
-      <div class="grid grid-cols-3 gap-6 mt-20 relative z-10 px-10">
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mt-20 relative z-10 px-10">
         <div
           class="rounded-lg bg-cover flex items-center flex-col justify-center group"
           style="background-image: url('/images/heladeria.png')"
@@ -270,7 +251,10 @@
           src="/images/installers.png"
           alt="Installers On Track"
         />
-        <img class="rounded-lg" src="/images/secret1.png" alt="Secret Koffre" />
+        <div class="artist-card">
+
+          <img class="rounded-lg artist-card__img" src="/images/secret1.png" alt="Secret Koffre" />
+        </div>
         <img class="rounded-lg" src="/images/grow.png" alt="Growth Blog" />
         <img class="rounded-lg" src="/images/cuquieco.png" alt="Cuquieco" />
         <img
@@ -286,7 +270,7 @@
         style="background-image: url('/images/fondo2.jpg')"
       ></div>
       <div class="container mx-auto relative z-20">
-        <div class="text-center">
+        <div class="text-center slider-div">
           <h3 class="text-6xl font-extrabold relative text-blue-900 uppercase">
             Contacto
           </h3>
@@ -302,7 +286,7 @@
           <p>ARUCAS, GRAN CANARIA</p>
           <p>javilogut91@gmail.com</p>
         </div>
-        <form action="submit" class="my-10 space-y-3">
+        <form action="mailto:javilogut91@gmail.com" class="my-10 space-y-3"  method="post" enctype="text/plain" >
           <div class="flex items-center justify-between space-x-3">
             <input
               type="text"
@@ -329,14 +313,23 @@
             placeholder="Escribe tu mensaje"
           ></textarea>
           <button
+          type="submit"
+          value="send"
             class="text-md font-extrabold flex justify-center items-center py-2 px-6 uppercase rounded-xl transparent border-4 border-blue-900 mx-auto text-blue-900 hover:bg-blue-900 hover:text-white pointer transition duration-500 ease-in-out"
           >
             Enviar
+          </button>
+          <button
+          value="reset"
+            class="text-md font-extrabold flex justify-center items-center py-2 px-6 uppercase rounded-xl transparent border-4 border-blue-900 mx-auto text-blue-900 hover:bg-blue-900 hover:text-white pointer transition duration-500 ease-in-out"
+          >
+            Cancelar
           </button>
         </form>
       </div>
     </section>
     <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
     <script src="mis-scripts.js"></script>
+    </div>
   </body>
 </html>

@@ -19,13 +19,42 @@ body {
   bottom: 20px;
 }
 
+.slider-div {
+  width: 700px;
+}
+
 .marco-derecho {
   height: auto;
   top: 20px;
   bottom: 20px;
 }
 
-.slider-right {
+.post-title {
+  position: relative;
+  font-size: 2rem;
+  font-weight: 700;
+  line-height: 1.333;
+  transition: 0.4s ease-out;
+}
+
+h3 {
+  --s: 0.1em; /* the thickness of the line */
+  --c: #1095c1; /* the color */
+
+  color: #0000;
+  padding-bottom: var(--s);
+  background: linear-gradient(90deg, var(--c) 50%, #000 0)
+      calc(100% - var(--_p, 0%)) / 200% 100%,
+    linear-gradient(var(--c) 0 0) 0% 100% / var(--_p, 0%) var(--s) no-repeat;
+  -webkit-background-clip: text, padding-box;
+  background-clip: text, padding-box;
+  transition: 0.5s;
+}
+h3:hover {
+  --_p: 100%;
+}
+
+/* .slider-right {
   position: absolute;
   animation: latidos 1s, mymoveright 3s;
 
@@ -36,40 +65,37 @@ body {
   position: absolute;
   animation: mymoveleft 3s, latidos 1s;
   animation-iteration-count: infinite;
-}
+} */
+/* 
+@media (min-width: 760px) {
+  @keyframes mymoveleft {
+    from {
+      left: 700px;
+    }
+    to {
+      left: 0px;
+    }
+  }
 
-@keyframes mymoveright {
-  from {
-    left: -180px;
+  @keyframes latidos {
+    from {
+      transform: none;
+    }
+    50% {
+      transform: scale(1.4);
+    }
+    to {
+      transform: none;
+    }
   }
-  to {
-    left: 600px;
-  }
-}
 
-@keyframes latidos {
-  from {
-    transform: none;
-  }
-  50% {
-    transform: scale(1.4);
-  }
-  to {
-    transform: none;
+  @keyframes mymoveright {
+    from {
+      left: 0px;
+    }
+    to {
+      left: 700px;
+    }
   }
 }
-
-.slider-left {
-  position: absolute;
-  animation: mymoveleft 3s;
-  animation-iteration-count: 1000;
-}
-
-@keyframes mymoveleft {
-  from {
-    left: 600px;
-  }
-  to {
-    left: -180px;
-  }
-}
+ */
