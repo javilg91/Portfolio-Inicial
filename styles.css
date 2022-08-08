@@ -1,0 +1,75 @@
+.borde {
+  border: 35px solid white;
+}
+
+body {
+  font-family: uchen;
+}
+
+.marco-superior {
+  top: 20px;
+  width: auto;
+  left: 20px;
+  right: 20px;
+}
+
+.marco-izquierdo {
+  height: auto;
+  top: 20px;
+  bottom: 20px;
+}
+
+.marco-derecho {
+  height: auto;
+  top: 20px;
+  bottom: 20px;
+}
+
+.slider-right {
+  position: absolute;
+  animation: latidos 1s, mymoveright 3s;
+
+  animation-iteration-count: infinite;
+}
+
+.slider-left {
+  position: absolute;
+  animation: mymoveleft 3s, latidos 1s;
+  animation-iteration-count: infinite;
+}
+
+@keyframes mymoveright {
+  from {
+    left: -180px;
+  }
+  to {
+    left: 600px;
+  }
+}
+
+@keyframes latidos {
+  from {
+    transform: none;
+  }
+  50% {
+    transform: scale(1.4);
+  }
+  to {
+    transform: none;
+  }
+}
+
+.slider-left {
+  position: absolute;
+  animation: mymoveleft 3s;
+  animation-iteration-count: 1000;
+}
+
+@keyframes mymoveleft {
+  from {
+    left: 600px;
+  }
+  to {
+    left: -180px;
+  }
+}
