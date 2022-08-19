@@ -1,335 +1,537 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="stylesheet" href="styles.css" />
-    <link rel="mis-scripts" href="mis-scripts.js" />
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300;0,400;1,300;1,400&family=Uchen&display=swap"
-      rel="stylesheet"
-    />
-    <link
-      href="https://unpkg.com/tailwindcss@^1.0/dist/tailwind.min.css"
-      rel="stylesheet"
-    />
-    <title>Portfolio Javier López</title>
-  </head>
-  <body>
-    <div class="overflow-hidden w-full"> 
-    <div
-      class="bg-gray-500 bg-cover h-screen flex flex-col justify-between items-center"
-      style="background-image: url('images/fondo6.jpg')"
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="stylesheet" href="styles.css" />
+  <link rel="mis-scripts" href="mis-scripts.js" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/tiny-slider/2.9.4/tiny-slider.css">
+  <!--[if (lt IE 9)]><script src="https://cdnjs.cloudflare.com/ajax/libs/tiny-slider/2.9.4/min/tiny-slider.helper.ie8.js"></script><![endif]-->
+  <link
+  href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300;0,400;1,300;1,400&family=Uchen&display=swap"
+  rel="stylesheet"
+  />
+  <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+  <link
+  href="https://unpkg.com/tailwindcss@^1.0/dist/tailwind.min.css"
+  rel="stylesheet"
+  />
+  <title>Portfolio Javier López</title>
+</head>
+<body>
+  <div class="overflow-hidden w-full relative"> 
+    <div  class="bg-blue-900 relative h-screen z-10 flex flex-col justify-between items-center  ">
+      <div
+      class=" absolute top-0 left-0 w-full h-full bg-gray-500 bg-cover opacity-25 "
+      style="background-image: url('images/fondo8.jpg')"></div>
+      <div
+      class="hidden xl:flex bg-white h-8 fixed top-2 marco-superior right-0 left-0 ml-6 mr-6"
+      >
+    </div>
+    <ul
+    class="marco-izquierdo z-80 h-auto top-0 bottom-0 mt-6 mb-6 space-y-8 bg-white hidden xl:flex fixed left-0 transform translate-x-6 transition duration-500 text-black w-8 flex flex-col items-center justify-center"
     >
-      <div
-        class="hidden lg:block bg-white h-8 fixed top-2 marco-superior right-0 left-0 ml-6 mr-6"
-      ></div>
-      <ul
-        class="marco-izquierdo z-20 h-auto top-0 bottom-0 mt-6 mb-6 space-y-8 bg-white hidden lg:flex fixed left-0 transform translate-x-6 transition duration-500 text-black w-8 flex flex-col items-center justify-center"
-      >
-        <li>
-          <a href=""><img src="images/instagram.png" alt="" class="h-4" /></a>
-        </li>
-        <li>
-          <a href=""><img src="images/facebook.png" alt="" class="h-4" /></a>
-        </li>
-        <li>
-          <a href=""><img src="images/linkedin.png" alt="" class="h-4" /></a>
-        </li>
-      </ul>
-      <div
-        class="hidden lg:flex marco-inferior z-20 bottom-0 transform -translate-y-6 transition duration-500 left-0 right-0 ml-6 mr-6 space-x-8 bg-white h-8 fixed text-black flex items-center justify-center"
-      >
-        <button id="mostrar" class="uppercase font-bold">
-          - Mostrar <span class="text-red-400"> Contenido</span> -
-        </button>
-      </div>
-      <div
-        class="hidden lg:block bg-white z-20 fixed w-8 marco-derecho right-0 transform -translate-x-6 transition duration-300 top-0 bottom-0 mt-6 mb-6"
-      ></div>
-      <div class="h-1 w-full bg-transparent"></div>
-      <nav
-        id="menu"
-        class="w-full transform translate-y-20 text-blue-900 fixed transition duration-300 z-20"
-      >
-        <div
-          class="h-16 flex flex-wrap justify-between items-center lg:px-0 lg:container mx-auto"
-        >
-          <!-- 
--->
-          <p class="text-3xl font-bold ml-2">Portfolio de Javier</p>
-          <div class="mr-2 flex items-center lg:hidden">
-            <!-- Mobile menu a -->
-            <button type="button" id="toggle-menu" class="abierto inline-block inline-flex items-center justify-center p-2 rounded-md text-blue-100  focus:outline-none  transition duration-150 ease-in-out" aria-label="Main menu" aria-expanded="false">
-              <!-- Icon when menu is closed. -->
-              <!-- Menu open: "hidden", Menu closed: "block" -->
-              <svg id="abierto" class="block h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="blue">
-                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
-              </svg>
-              <!-- Icon when menu is open. -->
-              <!-- Menu open: "block", Menu closed: "hidden" -->
-              <svg id="cerrado" class="hidden h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="blue">
-                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" />
-              </svg>
-            </a>
-          </div>
-          <ul id="nav-responsive" class="hidden w-full lg:w-auto lg:flex-row lg:bg-transparent  lg:flex lg:items-center  lg:space-x-10 uppercase text-md font-bold">
-            <li class=" hover:bg-blue-200 lg:hover:bg-transparent px-10 lg:px-0 py-2 lg:py-0">
-              <a class="hover:text-blue-600" href="#">Inicio</a>
-            </li>
-            <li class=" hover:bg-blue-200 lg:hover:bg-transparent px-10 lg:px-0 py-2 lg:py-0">
-              <a class="hover:text-blue-600" href="#conocimientos">Conocimientos</a>
-            </li>
-            <li class=" hover:bg-blue-200 lg:hover:bg-transparent px-10 lg:px-0 py-2 lg:py-0">
-              <a class="hover:text-blue-600" href="#sobreMi">Sobre mí</a>
-            </li>
-            <li class=" hover:bg-blue-200 lg:hover:bg-transparent px-10 lg:px-0 py-2 lg:py-0">
-              <a class="hover:text-blue-600" href="#">Portfolio</a>
-            </li>
-            <li class=" hover:bg-blue-200 lg:hover:bg-transparent px-10 lg:px-0 py-2 lg:py-0">
-              <a class="hover:text-blue-600" href="#">Contacto</a>
-            </li>
-          </ul>
-          
-        </div>
-      </nav>
+    <li>
+      <a href="https://www.linkedin.com/feed/"><img src="images/linkedin.png" alt="Perfil linkedin" class="h-4" /></a>
+    </li>
+    <li>
+      <a href="https://github.com/javilg91"><img src="images/git.png" alt="Perfil github" class="h-4" /></a>
+    </li>
+  </ul>
+  <div
+  class="hidden xl:flex marco-inferior z-20 bottom-0 transform -translate-y-6 transition duration-500 left-0 right-0 ml-6 mr-6 space-x-8 bg-white h-8 fixed text-black items-center justify-center"
+  >
+</div>
+<div
+class="hidden xl:block bg-white z-20 fixed w-8 marco-derecho right-0 transform -translate-x-6 transition duration-300 top-0 bottom-0 mt-6 mb-6"
+></div>
+<nav
+id="menu"
+class="hidden xl:block w-full mt-20 text-white fixed top-0 transition duration-300 z-50"
+>
+<div
+class="h-16 flex px-6 flex-wrap justify-between items-center lg:px-0 lg:container mx-auto"
+>
+<p class="text-xl md:text-4xl font-bold ml-2">
+  <a href="#">
+ Javier López
+</a></p>
+  
 
-      <div class="space-y-8 slider-div">
-        <div class=" post">
-          <h1 class="post-title text-2xl sm:text-4xl lg:text-6xl font-bold relative text-blue-900 uppercase text-center">
-            Javier López
-          </h1>
-        </div>
-        <div class="relative">
-          <h2
-            class="text-xl sm:text-2xl lg:text-3xl uppercase text-center font-bold overflow-hidden text-blue-900"
-          >
-            - Web Developer -
-          </h2>
-        </div>
+<ul  class="hidden w-full lg:w-auto lg:flex-row lg:bg-transparent  lg:flex lg:items-center  lg:space-x-10 uppercase text-xl font-bold">
+  <li class=" hover:bg-blue-200 lg:hover:bg-transparent px-10 lg:px-0 py-2 lg:py-0">
+    <a class="hover:text-blue-600" href="#">Inicio</a>
+  </li>
+  <li class=" hover:bg-blue-200 lg:hover:bg-transparent px-10 lg:px-0 py-2 lg:py-0">
+    <a class="hover:text-blue-600" href="#sobreMi">Sobre mí</a>
+  </li>
+  <li class=" hover:bg-blue-200 lg:hover:bg-transparent px-10 lg:px-0 py-2 lg:py-0">
+    <a class="hover:text-blue-600 " href="#conocimientos">Conocimientos</a>
+  </li>
+  <li class=" hover:bg-blue-200 lg:hover:bg-transparent px-10 lg:px-0 py-2 lg:py-0">
+    <a class="hover:text-blue-600" href="#portfolio">Portfolio</a>
+  </li>
+  <li class=" hover:bg-blue-200 lg:hover:bg-transparent px-10 lg:px-0 py-2 lg:py-0">
+    <a class="hover:text-blue-600" href="#contacto">Contacto</a>
+  </li>
+</ul>
+
+</div>
+</nav>
+<nav
+id="second-nav"
+class="w-full xl:hidden text-blue-200 fixed top-0 transition duration-300 z-50"
+>
+<div
+class="h-16 flex px-6 justify-between items-center lg:px-0 lg:container mx-auto"
+>
+<p class="text-xl md:text-3xl font-bold ml-2">
+  <a href="#">
+  Javier López
+</a></p>
+  
+<div class="mr-2 flex items-center xl:hidden">
+  <!-- Mobile menu a -->
+  <button type="button" id="toggle-menu" class="abierto inline-block inline-flex items-center justify-center p-2 rounded-md   focus:outline-none  transition duration-150 ease-in-out" aria-label="Main menu" aria-expanded="false">
+    <!-- Icon when menu is closed. -->
+    <!-- Menu open: "hidden", Menu closed: "block" -->
+    <svg id="abierto" class="block h-6 w-6 " fill="none" viewBox="0 0 24 24" stroke="currentColor">
+      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
+    </svg>
+    <!-- Icon when menu is open. -->
+    <!-- Menu open: "block", Menu closed: "hidden" -->
+    <svg id="cerrado" class="hidden h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="white">
+      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" />
+    </svg>
+  </a>
+</div>
+<ul id="nav-responsive" class="hidden w-full lg:w-auto  xl:flex flex-col lg:items-center  lg:space-x-10 uppercase text-sm font-bold">
+  <li class=" hover:bg-blue-200 lg:hover:bg-transparent px-10 lg:px-0 py-2 lg:py-0">
+    <a class="hover:text-blue-600" href="#">Inicio</a>
+  </li>
+  <li class=" hover:bg-blue-200 lg:hover:bg-transparent px-10 lg:px-0 py-2 lg:py-0">
+    <a class="hover:text-blue-600 " href="#conocimientos">Conocimientos</a>
+  </li>
+  <li class=" hover:bg-blue-200 lg:hover:bg-transparent px-10 lg:px-0 py-2 lg:py-0">
+    <a class="hover:text-blue-600" href="#sobreMi">Sobre mí</a>
+  </li>
+  <li class=" hover:bg-blue-200 lg:hover:bg-transparent px-10 lg:px-0 py-2 lg:py-0">
+    <a class="hover:text-blue-600" href="#portfolio">Portfolio</a>
+  </li>
+  <li class=" hover:bg-blue-200 lg:hover:bg-transparent px-10 lg:px-0 py-2 lg:py-0">
+    <a class="hover:text-blue-600" href="#contacto">Contacto</a>
+  </li>
+</ul>
+
+</div>
+</nav>
+<div class="h-1 w-full bg-transparent"></div>
+<div class="space-y-6 text-white">
+  <h1 class="text-3xl sm:text-4xl lg:text-6xl font-bold relative text-white uppercase text-center" data-aos="fade-left" data-aos-duration="1500">
+    Javier López
+  </h1>
+  <h2 class="text-2xl sm:text-3xl lg:text-4xl font-bold relative text-green-400 uppercase text-center" data-aos="fade-right" data-aos-duration="1500">- Web developer -</h2>
+</div>
+<div class="flex flex-col lg:flex-row space-y-6 lg:space-y-0 lg:space-x-12 space-x-0 items-center justify-center mb-24 relative z-20">
+  <a href="#sobreMi"
+  class="text-md lg:text-xl font-extrabold flex items-center justify-center py-2 lg:py-4 w-48 uppercase rounded-xl transparent border-4 border-transparent text-white hover:bg-white bg-green-400 hover:text-green-400  pointer transition duration-300 ease-in-out"
+  >
+  Sobre mí
+</a>
+<a
+href="#portfolio"
+class="text-md lg:text-xl font-extrabold flex items-center justify-center py-2 lg:py-4 w-48 uppercase rounded-xl transparent border-4 border-transparent text-white hover:bg-white bg-green-400 hover:text-green-400  pointer transition duration-300 ease-in-out"
+>
+Portfolio
+</a>
+</div>
+</div>
+  <section id="sobreMi" class="bg-white">
+    <div
+    class="container mx-auto py-32 flex flex-col space-y-10 justify-center items-center px-4"
+    >
+    <div class="relative text-center w-full ">
+      <h3 class="text-2xl sm:text-4xl lg:text-6xl font-extrabold relative text-blue-900 uppercase" data-aos="zoom-out" >
+        Sobre mí
+      </h3>
+      <div class="h-2 w-full md:w-1/2 mx-auto mt-2  bg-green-400" data-aos="fade-up"></div>
+    </div>
+    <p class="text-lg md:text-xl lg:text-3xl tracking-wide text-justify"data-aos="fade-right" >
+      Joven Grancanario, en concreto del municipio de Arucas. Mi historia es
+      un poco peculiar... te la cuento: <br />
+      <br />
+      Actualmente tengo 31 años y he tenido una amplia y variada carrera
+      laboral. He trabajado de camarero durante mis primeros años.
+      Posteriormente logré formarme y trabajar como Coordinador de Vuelos
+      para la compañía Iberia en el aeropuerto de Gran Canaria (2016 -
+      2018). Unos años después comencé a trabajar en SGS como Inspector de
+      carga de combustible para los buques petroquímicos del Puerto de Las
+      Palmas de Gran Canaria (2018 - 2020). <br><br> Si bien es cierto que he
+      participado en trabajos que han requerido de mí mucho esfuerzo,
+      apredizaje y responsabilidad, a raíz de la pandemia (2020), decidí
+      emprender el mayor reto que me había propuesto hasta la fecha:
+      <strong>Convertirme en Desarrollador Full-Stack</strong>. Lo hice de
+      manera autodidacta durante 1 año y medio. Cuando logré tener una base
+      sólida, comencé un bootcamp intensivo en <strong>Hack a Boss</strong>,
+      donde pude perfeccionar conocimientos como
+      <strong
+      >HTML5, CSS y JavaScript, y aprender otros lenguajes como MYSQL,
+      NodeJS y Frameworks como ReactJS.
+    </strong>
+    <br /><br><br>
+    Durante todo este período de tiempo, he tenido la suerte de participar
+    en varios proyectos para empresas que me han ayudado en mi crecimiento
+    como programador, los cuales serán mostrados, junto con mi CV, en este
+    portfolio.
+  </p>
+  <a
+  href="/images/CV 2022 español.pdf "
+  target="_blank"
+  class="text-lg lg:text-xl  font-extrabold flex justify-center items-center py-2 lg:py-4 px-6 uppercase rounded-xl transparent border-4 border-white text-white hover:bg-white bg-green-400 hover:text-green-400 hover:border-green-400 pointer transition duration-500 ease-in-out"
+  >Mi Curriculum en PDF</a
+  >
+</div>
+</section>
+<section id="conocimientos" class=" bg-blue-900 px-4 py-32">
+  <div class="container mx-auto">
+  <div class=" relative text-center w-full  mx-auto mb-20">
+    <h3 class="text-2xl sm:text-3xl text-white lg:text-6xl font-bold relative  uppercase" data-aos="zoom-in" >
+      Conocimientos
+    </h3>
+    <div class="h-2 w-full lg:w-1/2 mx-auto mt-2  bg-green-400" data-aos="fade-up"></div>
+  </div>
+  <div class="container mx-auto flex w-full  flex flex-col space-y-10 lg:flex-row lg:space-y-0 justify-around text-xl">
+    <div class="tarjeta overflow-hidden space-x-4 border text-white border-blue-200 px-2 lg:px-10 py-10 rounded-lg" data-aos="flip-right" data-aos-duration="1000">
+      <div
+      class="uppercase text-center w-full lg:w-64  rounded-xl overflow-hidden"
+      >
+      <div class=" conocimientos w-32 h-32 rounded-full flex items-center justify-center bg-blue-900 mx-auto border-8 border-blue-200">
+        
+        <img src="images/code.png" alt="" class="h-16 mx-auto" />
       </div>
-      <div class="flex flex-col lg:flex-row space-y-6 lg:space-y-0 lg:space-x-12 space-x-0 items-center justify-center mb-24">
-        <button
-          class="uppercase  font-extrabold flex justify-center items-center py-2 w-40 rounded-xl border-blue-900 transparent border-4 text-blue-900 hover:bg-blue-900 hover:text-blue-200 pointer transition duration-500 ease-in-out"
-        >
-          Sobre mí
-        </button>
-        <button
-          class="uppercase text-sm lg:text-md font-extrabold flex justify-center items-center py-2 w-40 rounded-xl border-blue-900 transparent border-4 text-blue-900 hover:bg-blue-900 hover:text-blue-200 pointer transition duration-500 ease-in-out"
-        >
-          Portfolio
-        </button>
+      <h4 class="text-2xl w-full py-5 overflow-hidden font-semibold text-white">
+        Programación
+      </h4>
+      <div class="bg-transparent w-full py-5 rounded-b-lg text-white">
+        HTML5 <br />
+        CSS <br />
+        MYSQL <br />
+        JavaScript <br />
+        Node JS
       </div>
     </div>
-    <section id="conocimientos" class="bg-gray-300 px-10 py-32">
-      <div class="container mx-auto flex w-full flex flex-col space-y-10 lg:flex-row lg:space-y-0 justify-around items-center">
-        <div class=" space-x-4 text-blue-900">
-          <div
-            class="uppercase text-center w-64 h-72 border-2 border-blue-900 rounded-xl overflow-hidden"
-          >
-            <div class="bg-blue-600 text-2xl w-full py-5 overflow-hidden h-1/3">
-              Programación
-              <img src="images/facebook.png" alt="" class="h-10 mx-auto" />
-            </div>
-            <div class="bg-transparent w-full py-5 rounded-b-lg">
-              HTML5 <br />
-              CSS <br />
-              MYSQL <br />
-              JavaScript <br />
-              Node JS
-            </div>
-          </div>
-        </div>
-        <div class="flex space-x-4 text-blue-900">
-          <div
-            class="uppercase text-center w-64 h-72 border-2 border-blue-900 rounded-xl"
-          >
-            <div class="bg-transparent text-2xl w-full py-5 rounded-t-lg h-1/3">
-              Tecnologías complementarias
-              <img src="images/facebook.png" alt="" class="h-10 mx-auto" />
-            </div>
-            <div class="bg-transparent w-full py-5 rounded-b-lg">
-              Bootstrap <br />
-              Tailwind CSS <br />
-            </div>
-          </div>
-        </div>
-        <div class="flex space-x-4 text-blue-900">
-          <div
-            class="uppercase text-center w-64 h-72 border-2 border-blue-900 rounded-xl overflow-hidden"
-          >
-            <div class="bg-gray-800 text-2xl w-full py-5">
-              CMS Frameworks
-              <img src="images/facebook.png" alt="" class="h-10 mx-auto" />
-            </div>
-            <div class="bg-transparent w-full py-5 rounded-b-lg">
-              WordPress <br />
-              Shopify <br />
-              React JS <br />
-              Angular JS
-            </div>
-          </div>
+  </div>
+  <div class="tarjeta space-x-4 text-white border border-blue-200 px-2 lg:px-10 py-10 rounded-lg"data-aos="flip-right" data-aos-duration="1000">
+    <div
+    class="uppercase text-center w-full lg:w-64 h-72  rounded-xl"
+    >
+    <div class="conocimientos w-32 h-32 rounded-full flex items-center justify-center bg-blue-900 mx-auto border-8 border-blue-200">
+      
+      <img src="images/tecnologias.png" alt="" class="h-16 mx-auto" />
+    </div>
+    <h4 class="bg-transparent text-2xl w-full py-5 rounded-t-lg font-semibold text-white">
+      Tecnologías complementarias
+    </h4>
+    <div class="bg-transparent w-full py-5 rounded-b-lg">
+      Bootstrap <br />
+      Tailwind CSS <br />
+    </div>
+  </div>
+</div>
+<div class="tarjeta space-x-4 text-white border border-blue-200 px-2 lg:px-10 py-10 rounded-lg"data-aos="flip-right" data-aos-duration="1000">
+  <div
+  class="uppercase text-center w-full lg:w-64 h-72  rounded-xl overflow-hidden"
+  >
+  <div class="conocimientos w-32 h-32 rounded-full flex items-center justify-center bg-blue-900 mx-auto border-8 border-blue-200">
+    
+    <img src="images/carrito.png" alt="" class="h-16 mx-auto" />
+  </div>
+  <h4 class="text-2xl w-full py-5 font-semibold text-white">
+    CMS Frameworks
+  </h4>
+  <div class="bg-transparent w-full py-5 rounded-b-lg ">
+    WordPress <br />
+    Shopify <br />
+    React JS <br />
+    Angular JS
+  </div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<section id="portfolio" class="py-32  relative  bg-white">
+  <div class="relative text-center mx-auto w-full container px-4 ">
+    <h3 class="text-2xl sm:text-4xl lg:text-6xl font-extrabold relative text-blue-900 uppercase" data-aos="zoom-in">
+      Mi Portfolio
+    </h3>
+    <div class="h-2 w-full md:w-1/2 mx-auto mt-2  bg-green-400" data-aos="fade-up"></div>
+  </div>
+  <div id="trabajos" class="slider-fotos  mt-20 relative px-10  shadow-xl mb-4  altura">
+    <div class="proyecto box  rounded-lg cursor-pointer transition duration-300" data-target="proyecto0" >
+      <img  src="/images/heladeria.png" alt="La Coqueta" class="altura object-cover object-cover"/>
+      <div id="proyecto0" class="hidden w-full p-2 text-md ">
+        <h5 class="text-3xl">
+          Heladería La Coqueta
+        </h5>
+        <p class="text-center text-xl">
+          Esta landing también fue realizada para <strong>Coco Solutions</strong>. Es una web para una heladería, y está hecha con <strong>TailwindCSS y JavaScript.</strong>
+        </p> 
+        <div class="flex flex-wrap justify-center my-10">
+          <img class=" object-cover rounded-lg m-4 shadow-lg img-modal" src="/images/la-coqueta2.png" alt="la coqueta">
+          <img class=" object-cover rounded-lg m-4 shadow-lg img-modal" src="/images/coqueta3.png" alt="la coqueta">
+          <img class=" object-cover rounded-lg m-4 shadow-lg img-modal" src="/images/coqueta4.png" alt="la coqueta">
         </div>
       </div>
-    </section>
-    <section id="sobreMi" class="bg-teal-200">
-      <div
-        class="container mx-auto py-32 flex flex-col space-y-10 justify-center items-center"
-      >
-        <div class="relative text-center slider-div">
-          <h3 class="text-2xl sm:text-4xl lg:text-6xl font-extrabold relative text-blue-900 uppercase">
-            Sobre mí
-          </h3>
-        </div>
-        <p class="text-lg tracking-wide text-center">
-          Joven Grancanario, en concreto del municipio de Arucas. Mi historia es
-          un poco peculiar... te la cuento: <br />
-          <br />
-          Actualmente tengo 31 años y he tenido una amplia y variada carrera
-          laboral. He trabajado de camarero durante mis primeros años.
-          Posteriormente logré formarme y trabajar como Coordinador de Vuelos
-          para la compañía Iberia en el aeropuerto de Gran Canaria (2016 -
-          2018). Unos años después comencé a trabajar en SGS como Inspector de
-          carga de combustible para los buques petroquímicos del Puerto de Las
-          Palmas de Gran Canaria (2018 - 2020). Si bien es cierto que he
-          participado en trabajos que han requerido de mí mucho esfuerzo,
-          apredizaje y responsabilidad, a raíz de la pandemia (2020), decidí
-          emprender el mayor reto que me había propuesto hasta la fecha:
-          <strong>Convertirme en Desarrollador Full-Stack</strong>. Lo hice de
-          manera autodidacta durante 1 año y medio. Cuando logré tener una base
-          sólida, comencé un bootcamp intensivo en <strong>Hack a Boss</strong>,
-          donde pude perfeccionar conocimientos como
-          <strong
-            >HTML5,CSS y JavaScript, y aprender otros lenguajes como MYSQL,
-            NodeJS y Frameworks como ReactJS.
-          </strong>
-          <br />
-          Durante todo este período de tiempo, he tenido la suerte de participar
-          en varios proyectos para empresas que me han ayudado en mi crecimiento
-          como programador, los cuáles serán mostrados, junto con mi CV, en este
-          portfolio.
+    </div>
+    <div class="proyecto box h-full rounded-lg cursor-pointer transition duration-300" data-target="proyecto1" >
+      <img  src="/images/secret1.png" alt="Secret Koffre" class="altura object-cover"/>
+      <div id="proyecto1" class="hidden w-full p-2 text-md bg-white">
+        <h5 class="text-3xl">
+          Secret Koffre
+        </h5>
+        <p class="text-xl text-center">
+
+         Esta web es una tienda online erótica llamada <strong class="italic">Secret Koffre</strong>. Está realizada con la plataforma Shopify y se trata de un diseño completamente personalizado donde se venden productos eróticos online. Si quieres saber más sobre ella, puedes visitar la web <strong><a href="https://www.secretkoffre.com" target="_blank">www.secretkoffre.com</a></strong>
         </p>
-        <a
-          href="/images/CV 2022 español.pdf "
-          target="_blank"
-          class="text-md font-extrabold flex justify-center items-center py-2 px-6 uppercase rounded-xl transparent border-4 border-blue-900 text-blue-900 hover:bg-blue-900 hover:text-white pointer transition duration-500 ease-in-out"
-          >Mi Curriculum en PDF</a
-        >
       </div>
-    </section>
-    <section id="portfolio" class="py-32 relative justify-center">
-      <div
-        class="absolute top-0 bottom-0 z-0 h-full w-full"
-        style="background-image: url('/images/fondo3.jpg')"
-      ></div>
-      <div class="relative text-center slider-div mx-auto">
-        <h3 class="text-2xl sm:text-4xl lg:text-6xl font-extrabold relative text-blue-900 uppercase">
-          Mi Portfolio
-        </h3>
-      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mt-20 relative z-10 px-10">
-        <div
-          class="rounded-lg bg-cover flex items-center flex-col justify-center group"
-          style="background-image: url('/images/heladeria.png')"
-        >
-          <div class="group bg-gray-500 rounded-xl px-3">
-            <h4
-              class="text-center group-hover:text-white pt-2 border-b border-white"
-            >
-              Heladería La Coqueta
-            </h4>
-            <div class="flex justify-between items-center divide-x py-2">
-              <a class="px-5" href="#">Sitio Web</a>
-              <a class="px-5" href="#">Ver más</a>
-            </div>
-          </div>
-        </div>
-        <img
-          class="rounded-lg"
-          src="/images/installers.png"
-          alt="Installers On Track"
-        />
-        <div class="artist-card">
-
-          <img class="rounded-lg artist-card__img" src="/images/secret1.png" alt="Secret Koffre" />
-        </div>
-        <img class="rounded-lg" src="/images/grow.png" alt="Growth Blog" />
-        <img class="rounded-lg" src="/images/cuquieco.png" alt="Cuquieco" />
-        <img
-          class="rounded-lg"
-          src="/images/participa.png"
-          alt="Andalucía Golf"
-        />
-      </div>
-    </section>
-    <section id="contacto" class="relative w-full h-full py-32">
-      <div
-        class="absolute top-0 h-full w-full"
-        style="background-image: url('/images/fondo2.jpg')"
-      ></div>
-      <div class="container mx-auto relative z-20">
-        <div class="text-center slider-div">
-          <h3 class="text-6xl font-extrabold relative text-blue-900 uppercase">
-            Contacto
-          </h3>
-          <div
-            class="w-2 bg-blue-200 absolute top-0 overflow-hidden slider-right"
-          ></div>
-          <div
-            class="w-2 bg-blue-200 absolute top-0 overflow-hidden slider-left"
-          ></div>
-        </div>
-        <div class="flex flex-col space-y-4 text-black relative z-20">
-          <div>TEL: 679137905</div>
-          <p>ARUCAS, GRAN CANARIA</p>
-          <p>javilogut91@gmail.com</p>
-        </div>
-        <form action="mailto:javilogut91@gmail.com" class="my-10 space-y-3"  method="post" enctype="text/plain" >
-          <div class="flex items-center justify-between space-x-3">
-            <input
-              type="text"
-              class="px-4 h-12 flex items-center border border-blue-900 rounded-lg text-lg bg-transparent w-1/2"
-              placeholder="Nombre"
-            />
-            <input
-              type="email"
-              class="px-4 h-12 flex items-center border border-blue-900 rounded-lg text-lg bg-transparent w-1/2"
-              placeholder="E-mail"
-            />
-          </div>
-          <input
-            type="text"
-            class="px-4 h-12 flex items-center border border-blue-900 rounded-lg text-lg bg-transparent w-1/2"
-            placeholder="Teléfono"
-          />
-          <textarea
-            name="mensaje"
-            id="mensaje"
-            cols="30"
-            rows="10"
-            class="px-4 pt-4 border border-blue-900 rounded-lg text-lg bg-transparent w-full"
-            placeholder="Escribe tu mensaje"
-          ></textarea>
-          <button
-          type="submit"
-          value="send"
-            class="text-md font-extrabold flex justify-center items-center py-2 px-6 uppercase rounded-xl transparent border-4 border-blue-900 mx-auto text-blue-900 hover:bg-blue-900 hover:text-white pointer transition duration-500 ease-in-out"
-          >
-            Enviar
-          </button>
-          <button
-          value="reset"
-            class="text-md font-extrabold flex justify-center items-center py-2 px-6 uppercase rounded-xl transparent border-4 border-blue-900 mx-auto text-blue-900 hover:bg-blue-900 hover:text-white pointer transition duration-500 ease-in-out"
-          >
-            Cancelar
-          </button>
-        </form>
-      </div>
-    </section>
-    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
-    <script src="mis-scripts.js"></script>
     </div>
-  </body>
+    <div class="proyecto box h-full  cursor-pointer" data-target="proyecto2">
+      <img  src="/images/grow.png" alt="Growth Blog" class="altura object-cover" />
+      <div id="proyecto2" class="hidden w-full p-2 text-md bg-white">
+          <h5 class="text-3xl">
+            Growth Blog
+          </h5>
+          <p class="text-xl text-center">
+            Otra maqueta realizada para <strong>Coco Solutions</strong>. Esta en concreto es una web que ofrece márketing y SEO para blogs, hecha con <strong>TailwindCSS y JavaScript.</strong>
+         </p> 
+         <div class="flex flex-wrap justify-center">
+           <img class="img-modal object-cover rounded-lg m-4 shadow-lg" src="/images/grow2.png" alt="la coqueta">
+           <img class="img-modal object-cover rounded-lg m-4 shadow-lg" src="/images/grow3.png" alt="la coqueta">
+           <img class="img-modal object-cover rounded-lg m-4 shadow-lg" src="/images/grow4.png" alt="la coqueta">
+           <img class="img-modal object-cover rounded-lg m-4 shadow-lg" src="/images/grow6.png" alt="la coqueta">
+          </div>
+        </div>
+      </div>  
+    <div class="proyecto box h-full cursor-pointer"  data-target="proyecto3">
+      <img  src="/images/cuquieco.png" alt="Cuquieco" class="altura object-cover"/>
+      <div id="proyecto3" class="hidden w-full p-2 text-md bg-white text-center">
+        <h5 class="text-3xl">
+          Cuquieco
+        </h5>
+        <p  class="text-xl text-center">
+
+          Esta maqueta también es para <strong>Coco Solutions</strong>. Es una web de venta online de productos de cosmética. <br><br>
+          <strong> Tecnologías: Html - TailwindCSS - JavaScript.</strong>
+        </p> 
+        <div class="flex flex-wrap justify-center">
+          <img class="img-modal object-cover rounded-lg m-4 shadow-lg" src="/images/cuquieco2.png" alt="la coqueta">
+          <img class="img-modal object-cover rounded-lg m-4 shadow-lg" src="/images/cuquieco3.png" alt="la coqueta">
+          <img class="img-modal object-cover rounded-lg m-4 shadow-lg" src="/images/cuquieco4.png" alt="la coqueta">
+          <img class="img-modal object-cover rounded-lg m-4 shadow-lg" src="/images/cuquieco5.png" alt="la coqueta">
+         </div>
+      </div>
+    </div>
+    <div class="proyecto box h-full cursor-pointer"  data-target="proyecto4">
+      <img
+      class="altura object-cover"
+      src="/images/installers.png"
+      alt="Installers On Track"
+      />
+      <div id="proyecto4" class="hidden w-full p-2 text-md  text-center">
+      <h5 class="text-3xl">
+        Installers On Track
+      </h5>
+      <p class="w-full p-2 text-xl text-center">Una web de vinilos para coches. En esta en concreto fui el encargado de remodelar algunas secciones. <br><br>
+        <strong>Tecnologías: Html5 - TailwindCSS</strong>
+      </p>
+      <div class="flex flex-wrap justify-center">
+        <img class="img-modal object-cover rounded-lg m-4 shadow-lg" src="/images/installers2.png" alt="la coqueta">
+        <img class="img-modal object-cover rounded-lg m-4 shadow-lg" src="/images/installers3.png" alt="la coqueta">
+        <img class="img-modal object-cover rounded-lg m-4 shadow-lg" src="/images/installers4.png" alt="la coqueta">
+       </div>
+    </div>
+  </div>
+    <div class="proyecto box h-full cursor-pointer"  data-target="proyecto5">
+      <img
+      class="altura object-cover"
+      src="/images/siente.png"
+      alt="Siente la emoción"
+      />
+      <div id="proyecto5" class="hidden w-full p-2 text-md bg-white cursor-pointer">
+        <h5 class="text-3xl">Siente La Emoción</h5>
+        <p class="w-full p-2 text-xl text-center">
+          Este es el proyecto de fin de curso de <strong>Hack a Boss</strong>. Es una web orientada a la búsqueda y reserva de experiencias, generalmente deportivas y posteriormente, su valoración. La idea de esta web es que empresas que oferten este tipo de actividades se pongan en contacto con el administrador de esta y, rellenando un formulario, puedan ofertarlas dentro de la página. <br><br>
+          <strong>
+            Tecnologías: <br>
+            - Back-end: NodeJS y MYSQL. <br>
+            - Front-end: Html5, CSS, ReactJS.
+          </strong>
+        </p> 
+        <iframe src="/images/proyecto.webm" frameborder="0" class="w-4/5 h-64 rounded-lg mx-auto mt-6">
+        </iframe>
+      </div>
+    </div>
+    <div class="proyecto box h-full cursor-pointer relative bg-white"  data-target="proyecto7">
+      <h5 class="text-black absolute top-0 left-0 right-0 mx-auto transform translate-y-40 text-3xl">Otros proyectos</h5>
+      <div id="proyecto7" class="hidden w-full p-2 text-md bg-blue-200 cursor-pointer">
+        <h6 class="text-3xl uppercase underline text-center">Otros Proyectos</h6>
+        <div class="text-center text-xl"> 
+          <p class="w-full p-2  text-center">
+          A parte de todos estos proyectos, he participado en algunos más en los que, por motivos de derechos de privacidad, no puedo mostrar aquí, aunque sí hablar un poco tanto de ellos como de las tecnologías que he utilizado:<br><br>
+        </p>
+         <ul>
+          <li><strong>- Plataforma de inversiones:</strong> esta web fue realizada para la empresa <strong>Squads</strong> y trata de un entorno donde inversores pueden informarse y en el caso de estar interesados, invertir en hoteles con todo el procedimiento para ello disponible. <strong>Tecnologías: Angular - HTML5 - CSS <br><br></strong></li>
+          <li><strong>- Plataforma de prevención de carreteras:</strong> esta web fue realizada para <strong>el Cabildo de Gran Canaria</strong> y mi función ha sido la de remodelar toda la intranet de los trabajadores a raíz de un diseño predefinido. <strong>Tecnologías: Angular - HTML5 - CSS.<br><br></strong></li>
+          <li><strong>- CRM para una empresa de bodas:</strong> esta web también fue realizada para la empresa <strong>Squads</strong>, la cual te permite gestionar toda la preparación (invitados, proveedores, horarios, presupuesto, etc.) de una boda. <strong>Tecnologías: Angular - HTML5 - CSS.<br><br></strong></li>
+         </ul>
+      </div>
+      </div>  
+    </div>
+      <div class="proyecto box h-full cursor-pointer"  data-target="proyecto6">
+        <img
+        class="altura object-cover"
+        src="/images/participa.png"
+        alt="Andalucía Golf"
+        />
+        <div id="proyecto6" class="hidden w-full p-2 text-md bg-white">
+          <h5 class="text-3xl">Andalucía Golf</h5>
+          <p class="text-xl text-center">En esta web me he encargado de remodelar diferetes secciones de la web, ya que andaba un poco obsoleta. Le he dado mi propio criterio decorativo y funcional para que tomase un nuevo aire.</p>
+          <div class="flex flex-wrap justify-center">
+            <img class="img-modal object-cover rounded-lg m-4 shadow-lg" src="/images/portal2.png" alt="la coqueta">
+            <img class="img-modal object-cover rounded-lg m-4 shadow-lg" src="/images/portal3.png" alt="la coqueta">
+            <img class="img-modal object-cover rounded-lg m-4 shadow-lg" src="/images/portal4.png" alt="la coqueta">
+            <img class="img-modal object-cover rounded-lg m-4 shadow-lg" src="/images/portal5.png" alt="la coqueta">
+           </div> 
+        </div>
+      </div>
+    </div>
+    <div class="space-x-8 xxl:hidden flex justify-center w-full mt-20 relative z-0">
+      <button
+        id="left-button"
+        class="rounded-full focus:outline-none flex justify-center cursor-pointer items-center left-0 bg-transparent transition duration-150 text-blue-900 "
+        >
+        <svg class="w-10 h-10" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7"></path></svg>
+      </button>
+      <button
+        id="right-button"
+        class="rounded-full focus:outline-none flex justify-center items-center right-0 bg-transparent transition duration-150 text-blue-900"
+        >
+        <svg class="w-10 h-10" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path></svg>
+      </button>
+    </div>
+  </div>
+</section>
+<div class="hidden modal-bg fixed top-0 bottom-0 left-0 right-0  items-center justify-center z-50">
+<div id="modal" class="opacity-100  w-full xl:w-1/2 bg-blue-200 p-10 rounded-lg min-h-64 z-50"></div>
+</div>
+<section id="contacto" class="relative w-full h-full py-32  bg-white">
+  <div
+  class="absolute top-0 h-full w-full bg-cover opacity-50"
+  style="background-image: url('/images/fondo6.jpg')"
+  ></div>
+  <div class="container mx-auto">
+    <div class="text-center  mx-auto mb-10 w-full">
+      <h3 class="text-3xl lg:text-6xl font-bold relative  text-center text-blue-900 uppercase" data-aos="zoom-in">
+        Contacto
+      </h3>
+      <div class="h-2 w-1/2 mx-auto mt-2
+       bg-green-400" data-aos="fade-up"></div>
+    </div>
+    <div class="flex flex-col space-y-4 font-bold text-2xl relative  justify-center items-center text-blue-900" data-aos="flip-left">
+      <div>TEL: 679137905</div>
+      <p>ARUCAS, GRAN CANARIA</p>
+      <p>javilogut91@gmail.com</p>
+    </div>
+    <form action="mailto:javilogut91@gmail.com" class="my-20 space-y-3 relative  px-4"  method="post" enctype="text/plain"data-aos="zoom-in" >
+      <ul class="space-y-6">
+        <div class="lg:flex space-y-3 lg:space-y-0 items-center justify-between lg:space-x-3">
+          <li class="w-full lg:w-1/2">
+            <label class="mb-4 pl-4 text-blue-900 font-bold text-lg justify-start" for="name">Nombre</label>
+            <input
+            type="text"
+            id="name"
+            name="user_name"
+            class="w-full mt-2  mx-auto px-4 h-12 flex items-center border border-blue-900 rounded-lg text-lg bg-transparent text-blue-200 placeholder-blue-900"
+            placeholder="Nombre"
+            />
+          </li>
+          <li class="w-full lg:w-1/2">
+            <label class="mb-4 pl-4 text-blue-900 font-bold text-lg justify-start" for="email ">Correo electrónico</label>
+            <input
+            type="email"
+            id="email"
+            name="user_email"
+            class="px-4 mt-2 h-12 flex items-center border border-blue-900 rounded-lg text-lg bg-transparent w-full  mx-auto placeholder-blue-900"
+            placeholder="E-mail"
+            />
+          </li>
+        </div>
+      <li class="w-full lg:w-1/2">
+        <label class="mb-4 pl-4 text-blue-900 font-bold text-lg justify-start" for="telefono">Teléfono de contacto</label>
+        <input
+        id="telefono"
+        name="contact_tel"
+        type="text"
+        class="px-4 mx-auto lg:mx-0 w-full  mt-2  h-12 flex items-center border border-blue-900 rounded-lg text-lg bg-transparent w-1/2 placeholder-blue-900"
+        placeholder="Teléfono"
+        />
+      </li>
+        <li class="w-full">
+          <label class="mb-4 pl-4 text-blue-900 font-bold text-lg justify-start" for="msg">Escribe tu mensaje</label>
+          <textarea
+          name="mensaje"
+          id="msg"
+          cols="30"
+          rows="10"
+          class="px-4 pt-4 border mt-2  text-blue-900 border-blue-900 rounded-lg text-lg bg-transparent w-full placeholder-blue-900"
+          placeholder="Escribe tu mensaje"
+          ></textarea>
+        </li>
+    </ul>
+      <div class=" flex-col space-y-3 lg:space-y-0 lg:flex-row lg:space-x-3 items-center justify-center text-center">
+        <button
+        type="submit"
+        value="send"
+        class="text-lg lg:text-xl outline-none font-extrabold  py-2 lg:py-4 w-48 uppercase rounded-xl transparent border-4 border-white text-white hover:bg-white bg-green-400 hover:text-green-400 hover:border-green-400 pointer transition duration-500 ease-in-out"
+        >
+        Enviar
+      </button>
+      <button
+      type="reset"
+      value="reset"
+      class="text-lg lg:text-xl outline-none font-extrabold  py-2 lg:py-4 w-48 uppercase rounded-xl transparent border-4 border-white text-white hover:bg-white bg-green-400 hover:text-green-400 hover:border-green-400 pointer transition duration-500 ease-in-out"
+      >
+      Cancelar
+    </button>
+  </div>
+  
+</form>
+<ul
+class="flex justify-center items-center space-x-8 pt-10 relative z-20"data-aos="flip-left"
+>
+<li>
+  <a href="https://www.linkedin.com/feed/"><img src="images/linkedin.png" alt="linkedin" class="h-8" /></a>
+</li>
+<li>
+  <a href="https://github.com/javilg91"><img src="images/git.png" alt="Perfil github" class="h-8" /></a>
+</li>
+</ul>
+</div>
+</section>
+<footer class="bg-blue-900 py-10 relative z-10">
+<ul class="container space-y-4 md:space-y-0 h-full mx-auto flex flex-col md:flex-row items-center justify-center text-lg text-blue-200  ">
+  <li class="px-10 md:border-r-2 border-blue-200">&copy 2022 - Javier López</li>
+  <li class="px-10 text-center">Imágenes sacadas de <a href="https://www.freepik.es/" target="_blank">www.freepik.es</a></li>
+</ul>
+</footer>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/tiny-slider/2.9.2/min/tiny-slider.js"></script>
+<script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+<script src="mis-scripts.js"></script>
+<!-- NOTE: prior to v2.2.1 tiny-slider.js need to be in <body> -->
+</div>
+</body>
 </html>
