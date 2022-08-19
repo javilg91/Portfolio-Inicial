@@ -133,7 +133,7 @@ h5 {
 }
  */
 @media (max-width: 720px) {
-  .img-modal {
-    height: 10rem;
+  .altura {
+    height: 15rem;
   }
 }
