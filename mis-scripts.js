@@ -69,11 +69,12 @@ navButton.addEventListener('click', function () {
     navResponsive.classList.add(
       'bg-white',
       'justify-start',
-      'text-blue-700',
+      'text-blue-900',
       'w-full'
     );
     menuOpen.classList.add('hidden');
     menuClosed.classList.remove('hidden');
+    menuClosed.classList.add('text-blue-900');
   } else {
     navResponsive.classList.add('hidden');
     navResponsive.classList.remove(
@@ -81,7 +82,7 @@ navButton.addEventListener('click', function () {
       'flex-col',
       'bg-white',
       'justify-start',
-      'text-blue-700'
+      'text-blue-900'
     );
     menuOpen.classList.remove('hidden');
     menuClosed.classList.add('hidden');
