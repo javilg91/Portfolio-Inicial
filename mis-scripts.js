@@ -66,7 +66,12 @@ navButton.addEventListener('click', function () {
   if (navResponsive.classList.contains('hidden')) {
     console.log('funciona');
     navResponsive.classList.remove('hidden');
-    navResponsive.classList.add('bg-white', 'justify-start', 'text-blue-700');
+    navResponsive.classList.add(
+      'bg-white',
+      'justify-start',
+      'text-blue-700',
+      'w-full'
+    );
     menuOpen.classList.add('hidden');
     menuClosed.classList.remove('hidden');
   } else {
