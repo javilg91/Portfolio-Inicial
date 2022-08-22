@@ -21,7 +21,9 @@ for (const proyecto of proyectos) {
   const target = proyecto.getAttribute('data-target');
   const collapse = document.getElementById(target);
 
-  proyecto.addEventListener('click', function () {
+  proyecto.addEventListener('click', function (e) {
+    e.preventDefault();
+    console.log('funciona modal');
     modalBg.classList.remove('hidden');
     modalBg.classList.add('flex');
     modal.innerHTML = collapse.innerHTML;
@@ -101,6 +103,7 @@ const sliderFotos = tns({
   controls: false,
   nav: false,
   mouseDrag: true,
+  slideBy: 'page',
   mode: 'carousel',
   responsive: {
     1024: {

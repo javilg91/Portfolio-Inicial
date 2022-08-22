@@ -14,7 +14,10 @@ h2,
 h3 {
   font-family: uchen;
 }
-
+.trabajo {
+  flex-shrink: 0;
+  width: 100%;
+}
 .marco-superior {
   top: 20px;
   width: auto;
@@ -68,6 +71,10 @@ h5 {
   height: auto;
   top: 20px;
   bottom: 20px;
+}
+
+#trabajos > .tns-item {
+  width: calc(10%);
 }
 
 .conocimientos {
