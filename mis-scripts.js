@@ -29,6 +29,31 @@ for (const proyecto of proyectos) {
     modal.innerHTML = collapse.innerHTML;
   });
 }
+
+const leftButton = document.getElementById('left-button');
+const rightButton = document.getElementById('right-button');
+const sliderFotos = tns({
+  container: '.slider-fotos',
+  items: 1,
+  controls: false,
+  nav: false,
+  mouseDrag: false,
+  mode: 'carousel',
+  responsive: {
+    1024: {
+      items: 2,
+    },
+  },
+});
+
+leftButton.addEventListener('click', function () {
+  sliderFotos.goTo('next');
+});
+
+rightButton.addEventListener('click', function () {
+  sliderFotos.goTo('prev');
+});
+
 const hideModal = () => modalBg.classList.add('hidden');
 modalBg.addEventListener('click', hideModal);
 
@@ -48,7 +73,6 @@ window.addEventListener('scroll', function () {
     marcoInferior.classList.remove('-translate-y-6');
     marcoInferior.classList.remove('ml-6', 'mr-6');
     navButton.classList.add('text-blue-300');
-    mostrar.classList.add('lowercase');
   } else {
     nav.classList.remove('bg-white', 'text-blue-900', 'shadow-lg');
     menuOpen.classList.add('text-blue-200');
@@ -89,41 +113,4 @@ navButton.addEventListener('click', function () {
     menuOpen.classList.remove('hidden');
     menuClosed.classList.add('hidden');
   }
-});
-
-const leftButtonResponsive = document.getElementById('left-button-responsive');
-const rightButtonResponsive = document.getElementById(
-  'right-button-responsive'
-);
-const leftButton = document.getElementById('left-button');
-const rightButton = document.getElementById('right-button');
-const sliderFotos = tns({
-  container: '.slider-fotos',
-  items: 1,
-  controls: false,
-  nav: false,
-  mouseDrag: true,
-  slideBy: 'page',
-  mode: 'carousel',
-  responsive: {
-    1024: {
-      items: 3,
-    },
-  },
-});
-
-leftButton.addEventListener('click', function () {
-  sliderFotos.goTo('next');
-});
-
-rightButton.addEventListener('click', function () {
-  sliderFotos.goTo('prev');
-});
-
-leftButtonResponsive.addEventListener('click', function () {
-  sliderFotos.goTo('next');
-});
-
-rightButtonResponsive.addEventListener('click', function () {
-  sliderFotos.goTo('prev');
 });

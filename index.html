@@ -378,6 +378,20 @@
           </div>
         </div>
       </section>
+      <div
+        class="hidden modal-bg fixed top-0 bottom-0 left-0 right-0 items-center justify-center z-50"
+      >
+        <div
+          class="w-full xl:w-4/5 bg-blue-200 overflow-auto h-full xl:h-auto py-10 px-6 rounded-lg min-h-64 z-50"
+        >
+          <button
+            class="float-right xl:hidden bg-transparent text-xl mb-4 cursor-pointer"
+          >
+            X
+          </button>
+          <div id="modal"></div>
+        </div>
+      </div>
       <section id="portfolio" class="py-32 relative bg-white">
         <div class="relative text-center mx-auto w-full container px-4">
           <h3
@@ -396,7 +410,7 @@
           class="slider-fotos mt-20 relative px-10 shadow-xl mb-1 altura"
         >
           <div
-            class="proyecto w-full box rounded-lg cursor-pointer transition duration-300"
+            class="proyecto w-full box rounded-lg cursor-pointer"
             data-target="proyecto0"
           >
             <img
@@ -431,7 +445,7 @@
             </div>
           </div>
           <div
-            class="proyecto w-full box h-full rounded-lg cursor-pointer transition duration-300"
+            class="proyecto w-full box h-full rounded-lg cursor-pointer"
             data-target="proyecto1"
           >
             <img src="/images/secret1.png" alt="Secret Koffre" class="altura" />
@@ -601,14 +615,50 @@
             </div>
           </div>
           <div
-            class="proyecto w-full box h-full cursor-pointer relative bg-white"
+            class="proyecto w-full box h-full cursor-pointer"
+            data-target="proyecto6"
+          >
+            <img
+              class="altura object-cover"
+              src="/images/participa.png"
+              alt="Andalucía Golf"
+            />
+            <div id="proyecto6" class="hidden w-full p-2 text-md bg-white">
+              <h5 class="text-3xl">Andalucía Golf</h5>
+              <p class="text-xl text-center">
+                En esta web me he encargado de remodelar diferetes secciones de
+                la web, ya que andaba un poco obsoleta. Le he dado mi propio
+                criterio decorativo y funcional para que tomase un nuevo aire.
+              </p>
+              <div class="flex flex-wrap justify-center">
+                <img
+                  class="img-modal object-cover rounded-lg m-4 shadow-lg"
+                  src="/images/portal2.png"
+                  alt="la coqueta"
+                />
+                <img
+                  class="img-modal object-cover rounded-lg m-4 shadow-lg"
+                  src="/images/portal3.png"
+                  alt="la coqueta"
+                />
+                <img
+                  class="img-modal object-cover rounded-lg m-4 shadow-lg"
+                  src="/images/portal4.png"
+                  alt="la coqueta"
+                />
+                <img
+                  class="img-modal object-cover rounded-lg m-4 shadow-lg"
+                  src="/images/portal5.png"
+                  alt="la coqueta"
+                />
+              </div>
+            </div>
+          </div>
+          <div
+            class="proyecto w-full h-full cursor-pointer bg-white"
             data-target="proyecto7"
           >
-            <h5
-              class="text-black absolute top-0 left-0 right-0 mx-auto transform lg:translate-y-40 text-3xl"
-            >
-              Otros proyectos
-            </h5>
+            <h5 class="text-black text-3xl">Otros proyectos</h5>
             <div
               id="proyecto7"
               class="hidden w-full p-2 text-md bg-blue-200 cursor-pointer"
@@ -658,46 +708,6 @@
               </div>
             </div>
           </div>
-          <div
-            class="proyecto w-full box h-full cursor-pointer"
-            data-target="proyecto6"
-          >
-            <img
-              class="altura object-cover"
-              src="/images/participa.png"
-              alt="Andalucía Golf"
-            />
-            <div id="proyecto6" class="hidden w-full p-2 text-md bg-white">
-              <h5 class="text-3xl">Andalucía Golf</h5>
-              <p class="text-xl text-center">
-                En esta web me he encargado de remodelar diferetes secciones de
-                la web, ya que andaba un poco obsoleta. Le he dado mi propio
-                criterio decorativo y funcional para que tomase un nuevo aire.
-              </p>
-              <div class="flex flex-wrap justify-center">
-                <img
-                  class="img-modal object-cover rounded-lg m-4 shadow-lg"
-                  src="/images/portal2.png"
-                  alt="la coqueta"
-                />
-                <img
-                  class="img-modal object-cover rounded-lg m-4 shadow-lg"
-                  src="/images/portal3.png"
-                  alt="la coqueta"
-                />
-                <img
-                  class="img-modal object-cover rounded-lg m-4 shadow-lg"
-                  src="/images/portal4.png"
-                  alt="la coqueta"
-                />
-                <img
-                  class="img-modal object-cover rounded-lg m-4 shadow-lg"
-                  src="/images/portal5.png"
-                  alt="la coqueta"
-                />
-              </div>
-            </div>
-          </div>
         </div>
         <div
           class="space-x-8 xxl:hidden flex justify-center w-full mt-20 relative z-0"
@@ -742,16 +752,6 @@
           </button>
         </div>
       </section>
-      <div
-        class="hidden modal-bg fixed top-0 bottom-0 left-0 right-0 items-center justify-center z-50"
-      >
-        <div
-          id="modal"
-          class="opacity-100 w-full xl:w-4/5 bg-blue-200 overflow-auto h-full xl:h-auto py-10 px-6 rounded-lg min-h-64 z-50"
-        >
-          <button class="bg-black p-4">Xss</button>
-        </div>
-      </div>
       <section id="contacto" class="relative w-full h-full py-32 bg-white">
         <div
           class="absolute top-0 h-full w-full bg-cover opacity-50"

@@ -25,7 +25,7 @@ h3 {
   right: 20px;
 }
 .altura {
-  height: 25rem;
+  height: 32rem;
   width: 100%;
 }
 
@@ -141,6 +141,6 @@ h5 {
  */
 @media (max-width: 720px) {
   .altura {
-    height: 15rem;
+    height: 10rem;
   }
 }
