@@ -56,12 +56,15 @@ h3 {
   background-color: rgba(0, 0, 0, 0.6);
 }
 
+.proyecto {
+  background-color: rgb(230, 237, 230);
+}
+
 #modal {
   min-height: 16rem;
 }
 h5 {
   font-weight: bold !important;
-  text-decoration: underline;
   padding-bottom: 20px;
   color: black;
   text-align: center;
@@ -71,10 +74,6 @@ h5 {
   height: auto;
   top: 20px;
   bottom: 20px;
-}
-
-#trabajos > .tns-item {
-  width: calc(10%);
 }
 
 .conocimientos {
@@ -141,6 +140,7 @@ h5 {
  */
 @media (max-width: 720px) {
   .altura {
-    height: 10rem;
+    height: 13rem;
+    object-fit: cover;
   }
 }

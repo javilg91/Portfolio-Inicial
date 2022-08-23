@@ -380,15 +380,19 @@
       </section>
       <div
         class="hidden modal-bg fixed top-0 bottom-0 left-0 right-0 items-center justify-center z-50"
+        onclick="handleModalClick()"
       >
         <div
-          class="w-full xl:w-4/5 bg-blue-200 overflow-auto h-full xl:h-auto py-10 px-6 rounded-lg min-h-64 z-50"
+          class="w-full xl:w-4/5 bg-blue-200 overflow-auto h-full xl:h-auto py-10 px-6 xl:rounded-lg min-h-64 z-50"
         >
-          <button
-            class="float-right xl:hidden bg-transparent text-xl mb-4 cursor-pointer"
-          >
-            X
-          </button>
+          <div class="w-full flex justify-end">
+            <button
+              id="closeModal"
+              class="flex justify-center items-center text-black font-bold text-right bg-transparent xl:hidden text-xl cursor-pointer"
+            >
+              X
+            </button>
+          </div>
           <div id="modal"></div>
         </div>
       </div>
@@ -405,18 +409,15 @@
             data-aos="fade-up"
           ></div>
         </div>
-        <div
-          id="trabajos"
-          class="slider-fotos mt-20 relative px-10 shadow-xl mb-1 altura"
-        >
+        <div id="trabajos" class="slider-fotos mt-20 relative px-10 altura">
           <div
-            class="proyecto w-full box rounded-lg cursor-pointer"
+            class="proyecto text-center box rounded-lg cursor-pointer"
             data-target="proyecto0"
           >
             <img
               src="/images/heladeria.png"
               alt="La Coqueta"
-              class="altura w-full"
+              class="altura xl:object-contain"
             />
             <div id="proyecto0" class="hidden w-full p-2 text-md">
               <h5 class="text-3xl">Heladería La Coqueta</h5>
@@ -445,10 +446,14 @@
             </div>
           </div>
           <div
-            class="proyecto w-full box h-full rounded-lg cursor-pointer"
+            class="proyecto text-center box h-full rounded-lg cursor-pointer"
             data-target="proyecto1"
           >
-            <img src="/images/secret1.png" alt="Secret Koffre" class="altura" />
+            <img
+              src="/images/secret1.png"
+              alt="Secret Koffre"
+              class="altura xl:object-contain"
+            />
             <div id="proyecto1" class="hidden w-full p-2 text-md bg-white">
               <h5 class="text-3xl">Secret Koffre</h5>
               <p class="text-xl text-center">
@@ -466,10 +471,14 @@
             </div>
           </div>
           <div
-            class="proyecto w-full box h-full cursor-pointer"
+            class="proyecto text-center box h-full cursor-pointer"
             data-target="proyecto2"
           >
-            <img src="/images/grow.png" alt="Growth Blog" class="altura" />
+            <img
+              src="/images/grow.png"
+              alt="Growth Blog"
+              class="altura xl:object-contain"
+            />
             <div id="proyecto2" class="hidden w-full p-2 text-md bg-white">
               <h5 class="text-3xl">Growth Blog</h5>
               <p class="text-xl text-center">
@@ -502,13 +511,13 @@
             </div>
           </div>
           <div
-            class="proyecto w-full box h-full cursor-pointer"
+            class="proyecto text-center box h-full cursor-pointer"
             data-target="proyecto3"
           >
             <img
               src="/images/cuquieco.png"
               alt="Cuquieco"
-              class="altura object-cover"
+              class="altura xl:object-contain"
             />
             <div
               id="proyecto3"
@@ -545,11 +554,11 @@
             </div>
           </div>
           <div
-            class="proyecto w-full box h-full cursor-pointer"
+            class="proyecto text-center box h-full cursor-pointer"
             data-target="proyecto4"
           >
             <img
-              class="altura object-cover"
+              class="altura xl:object-contain"
               src="/images/installers.png"
               alt="Installers On Track"
             />
@@ -580,11 +589,11 @@
             </div>
           </div>
           <div
-            class="proyecto w-full box h-full cursor-pointer"
+            class="proyecto text-center box h-full cursor-pointer"
             data-target="proyecto5"
           >
             <img
-              class="altura object-cover"
+              class="altura xl:object-contain"
               src="/images/siente.png"
               alt="Siente la emoción"
             />
@@ -615,11 +624,11 @@
             </div>
           </div>
           <div
-            class="proyecto w-full box h-full cursor-pointer"
+            class="proyecto text-center box h-full cursor-pointer"
             data-target="proyecto6"
           >
             <img
-              class="altura object-cover"
+              class="altura xl:object-contain"
               src="/images/participa.png"
               alt="Andalucía Golf"
             />
@@ -654,63 +663,10 @@
               </div>
             </div>
           </div>
-          <div
-            class="proyecto w-full h-full cursor-pointer bg-white"
-            data-target="proyecto7"
-          >
-            <h5 class="text-black text-3xl">Otros proyectos</h5>
-            <div
-              id="proyecto7"
-              class="hidden w-full p-2 text-md bg-blue-200 cursor-pointer"
-            >
-              <h6 class="text-3xl uppercase underline text-center">
-                Otros Proyectos
-              </h6>
-              <div class="text-center text-xl">
-                <p class="w-full p-2 text-center">
-                  A parte de todos estos proyectos, he participado en algunos
-                  más en los que, por motivos de derechos de privacidad, no
-                  puedo mostrar aquí, aunque sí hablar un poco tanto de ellos
-                  como de las tecnologías que he utilizado:<br /><br />
-                </p>
-                <ul>
-                  <li>
-                    <strong>- Plataforma de inversiones:</strong> esta web fue
-                    realizada para la empresa <strong>Squads</strong> y trata de
-                    un entorno donde inversores pueden informarse y en el caso
-                    de estar interesados, invertir en hoteles con todo el
-                    procedimiento para ello disponible.
-                    <strong
-                      >Tecnologías: Angular - HTML5 - CSS <br /><br
-                    /></strong>
-                  </li>
-                  <li>
-                    <strong>- Plataforma de prevención de carreteras:</strong>
-                    esta web fue realizada para
-                    <strong>el Cabildo de Gran Canaria</strong> y mi función ha
-                    sido la de remodelar toda la intranet de los trabajadores a
-                    raíz de un diseño predefinido.
-                    <strong
-                      >Tecnologías: Angular - HTML5 - CSS.<br /><br
-                    /></strong>
-                  </li>
-                  <li>
-                    <strong>- CRM para una empresa de bodas:</strong> esta web
-                    también fue realizada para la empresa
-                    <strong>Squads</strong>, la cual te permite gestionar toda
-                    la preparación (invitados, proveedores, horarios,
-                    presupuesto, etc.) de una boda.
-                    <strong
-                      >Tecnologías: Angular - HTML5 - CSS.<br /><br
-                    /></strong>
-                  </li>
-                </ul>
-              </div>
-            </div>
-          </div>
         </div>
+
         <div
-          class="space-x-8 xxl:hidden flex justify-center w-full mt-20 relative z-0"
+          class="space-x-8 xxl:hidden flex justify-center w-full my-20 relative z-0"
         >
           <button
             id="left-button"
@@ -750,6 +706,51 @@
               ></path>
             </svg>
           </button>
+        </div>
+        <button
+          class="proyecto text-lg lg:text-xl font-extrabold flex justify-center items-center py-2 lg:py-4 px-6 uppercase rounded-xl transparent border-4 border-white text-white hover:bg-white bg-green-400 hover:text-green-400 hover:border-green-400 pointer transition duration-500 ease-in-out mx-auto"
+          data-target="proyecto7"
+        >
+          otros proyectos
+        </button>
+        <div
+          id="proyecto7"
+          class="hidden w-full p-2 text-md bg-blue-200 cursor-pointer"
+        >
+          <h5 class="text-3xl uppercase text-center">Otros Proyectos</h5>
+          <div class="text-center text-xl">
+            <p class="w-full p-2 text-center">
+              A parte de todos estos proyectos, he participado en algunos más en
+              los que, por motivos de derechos de privacidad, no puedo mostrar
+              aquí, aunque sí hablar un poco tanto de ellos como de las
+              tecnologías que he utilizado:<br /><br />
+            </p>
+            <ul>
+              <li>
+                <strong>- Plataforma de inversiones:</strong> esta web fue
+                realizada para la empresa <strong>Squads</strong> y trata de un
+                entorno donde inversores pueden informarse y en el caso de estar
+                interesados, invertir en hoteles con todo el procedimiento para
+                ello disponible.
+                <strong>Tecnologías: Angular - HTML5 - CSS <br /><br /></strong>
+              </li>
+              <li>
+                <strong>- Plataforma de prevención de carreteras:</strong>
+                esta web fue realizada para
+                <strong>el Cabildo de Gran Canaria</strong> y mi función ha sido
+                la de remodelar toda la intranet de los trabajadores a raíz de
+                un diseño predefinido.
+                <strong>Tecnologías: Angular - HTML5 - CSS.<br /><br /></strong>
+              </li>
+              <li>
+                <strong>- CRM para una empresa de bodas:</strong> esta web
+                también fue realizada para la empresa <strong>Squads</strong>,
+                la cual te permite gestionar toda la preparación (invitados,
+                proveedores, horarios, presupuesto, etc.) de una boda.
+                <strong>Tecnologías: Angular - HTML5 - CSS.<br /><br /></strong>
+              </li>
+            </ul>
+          </div>
         </div>
       </section>
       <section id="contacto" class="relative w-full h-full py-32 bg-white">

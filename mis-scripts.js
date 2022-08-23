@@ -16,6 +16,11 @@ const proyectos = document.querySelectorAll('.proyecto');
 const secondNav = document.getElementById('second-nav');
 const modal = document.getElementById('modal');
 const modalBg = document.querySelector('.modal-bg');
+const closeModal = document.querySelector('#closeModal');
+
+closeModal.addEventListener('click', function (e) {
+  e.stopPropagation();
+});
 
 for (const proyecto of proyectos) {
   const target = proyecto.getAttribute('data-target');
@@ -38,12 +43,13 @@ const sliderFotos = tns({
   controls: false,
   nav: false,
   mouseDrag: false,
-  mode: 'carousel',
+  center: false,
+  mode: 'carousel' /* 
   responsive: {
     1024: {
       items: 2,
     },
-  },
+  }, */,
 });
 
 leftButton.addEventListener('click', function () {
@@ -54,8 +60,14 @@ rightButton.addEventListener('click', function () {
   sliderFotos.goTo('prev');
 });
 
-const hideModal = () => modalBg.classList.add('hidden');
+const hideModal = (e) => {
+  e.preventDefault();
+  modalBg.classList.add('hidden');
+};
+
 modalBg.addEventListener('click', hideModal);
+closeModal.addEventListener('click', hideModal);
+modal.addEventListener('click', (event) => event.stopPropagation());
 
 window.addEventListener('scroll', function () {
   const doc = document.documentElement;
